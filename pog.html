@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vídeo com Som</title>
+    <title>Reprodução Automática de Vídeo</title>
     <style>
         body {
             margin: 0;
@@ -21,9 +21,15 @@
     </style>
 </head>
 <body>
-    <video autoplay>
+    <video autoplay muted loop>
         <source src="video.mp4" type="video/mp4">
         Seu navegador não suporta o elemento de vídeo.
     </video>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const video = document.querySelector("video");
+            video.play();
+        });
+    </script>
 </body>
 </html>
